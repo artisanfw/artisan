@@ -65,9 +65,7 @@ CREATE TABLE tokens (
    INDEX idx_entity_type (entity_name, entity_id, type),
    INDEX idx_code_type (code, type)
 ) ENGINE = InnoDB CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-```
 
-```sql
 CREATE TABLE users (
   id int(11) NOT NULL,
   email varchar(255) NOT NULL,
