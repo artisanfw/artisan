@@ -2,11 +2,13 @@
 A lightweight framework designed for quickly launching small projects.
 
 This version includes a complete solution with:
-* Account management, including token-based authorization and short codes sent via email.
+* Account management
+* Emails powered by Twig.
+* Short code authentication for account validation and login. [See artisanfw/token-manager](https://github.com/artisanfw/token-manager)
 * Expiration handling for tokens and codes.
-* IP geolocation detection (requires GeoLite2-City database).
-* Translation support.
-* Doctrine integration for database management.
+* IP geolocation detection. [See artisanfw/where](https://github.com/artisanfw/where).
+* Translation support [See artisanfw/i18n](https://github.com/artisanfw/i18n)
+* Doctrine integration for database management. [See artisanfw/doctrine](https://github.com/artisanfw/doctrine)
 
 
 ## Installation
