@@ -12,7 +12,7 @@ This version includes a complete solution with:
 
 
 ## Installation
-Currently, this project is in **beta**, so you will need to run:
+Currently, this project is in **alpha**, so you will need to run:
 ```bash
 composer create-project artisanfw/artisan my_project_dir dev-main --repository='{"type": "vcs", "url": "https://github.com/artisanfw/artisan"}'
 ```
@@ -49,7 +49,7 @@ You can find more details about bootstraps and other API-specific behaviors in t
 A default `.htaccess` file is provided for convenience, but it is strongly recommended to review and properly configure your web server settings.
 
 ### Database
-You will need to add two tables:
+Add this two tables to your database:
 ```sql
 CREATE TABLE tokens (
    id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
