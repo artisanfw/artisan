@@ -24,13 +24,14 @@ composer install
 cp config_example.php .config.php
 ```
 2. Edit `.config.php`, paying special attention to
-3. Remove the config_example
 
 >'geoip' => license_key
 
 >'accounts' => token_salt
 
 *License key:* To obtain a valid license, you must register on MaxMind’s website.
+
+3. Remove the config_example
 
 ### MaxMind GeoLite2
 Run the cron job to download the GeoLite2-City database:
