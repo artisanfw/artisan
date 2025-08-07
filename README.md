@@ -48,4 +48,37 @@ You can find more details about bootstraps and other API-specific behaviors in t
 ### Configure your web server (Apache2, Nginx, etc).
 A default `.htaccess` file is provided for convenience, but it is strongly recommended to review and properly configure your web server settings.
 
+### Database
+You will need to add two tables:
+```sql
+CREATE TABLE tokens (
+   id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+   entity_name VARCHAR(32) NOT NULL,
+   entity_id INT(32) UNSIGNED NOT NULL,
+   code VARCHAR(32) NOT NULL,
+   type VARCHAR(16) NOT NULL,
+   behavior VARCHAR(16) NOT NULL,
+   remaining_uses TINYINT UNSIGNED NULL DEFAULT '1',
+   expiration_at DATETIME NOT NULL,
+   created_at DATETIME NOT NULL,
+   PRIMARY KEY (id),
+   INDEX idx_entity_type (entity_name, entity_id, type),
+   INDEX idx_code_type (code, type)
+) ENGINE = InnoDB CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+```
+
+```sql
+CREATE TABLE users (
+  id int(11) NOT NULL,
+  email varchar(255) NOT NULL,
+  password varchar(255) NOT NULL,
+  verified tinyint(1) NOT NULL DEFAULT 0,
+  name varchar(255) NOT NULL,
+  surname varchar(50) NOT NULL,
+  country_code varchar(3) DEFAULT NULL,
+  timezone varchar(64) DEFAULT NULL,
+  created_at datetime NOT NULL COMMENT 'UTC',
+  PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+```
 
