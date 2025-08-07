@@ -10,12 +10,12 @@ This version includes a complete solution with:
 
 
 ## Installation
+Currently, this project is in **beta**, so you will need to run:
 ```bash
-composer create-project artisanfw/artisanfw my_project_dir
-
-cd my_project_dir
-composer install
+composer create-project artisanfw/artisan my_project_dir dev-main --repository='{"type": "vcs", "url": "https://github.com/artisanfw/artisan"}'
 ```
+You only need to change `my_project_dir` to your project folder name.
+
 
 ## Setup
 ### .config.php
