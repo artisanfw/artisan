@@ -1,0 +1,106 @@
+webname: "Artisan"
+
+# Footer emails
+copyright: "{year} © The Artisan Team."
+all_rights_reserved: "Todos los derechos reservados."
+no_reply: "No respondas a este correo electrónico."
+
+
+# Cuentas de usuario
+invalid_credentials: "Credenciales no válidas."
+miss_req_data: "Faltan datos obligatorios."
+data_saved: "Datos guardados con éxito."
+email_exists: "El email ya está registrado."
+welcome_to: "¡Bienvenido, {user}!"
+hello_again: "¡Hola de nuevo, {user}!"
+your_verification_code: "Aquí tienes tu código de acceso:"
+verification_code_explanation: "Introduce este código en {webname}. Solo puedes usarlo una vez."
+code_expiration: "El código expirará en {exp_time}."
+check_email: "Por favor, revise su correo electrónico. Se le ha enviado un código de acceso de un solo uso."
+invalid_email_format: "El email no es válido."
+invalid_country_code: "El país no es válido."
+invalid_timezone: "La zona horaria no es válida."
+invalid_password: "La contraseña debe tener al menos {n} caracteres."
+
+
+
+
+# Tiempo (requiere php-intl para la pluralización automática)
+second: >-
+   {n, plural,
+       =1    {segundo}
+       other {segundos}
+   }
+minute: >-
+   {n, plural,
+       =1    {minuto}
+       other {minutos}
+   }
+hour: >-
+   {n, plural,
+       =1    {hora}
+       other {horas}
+   }
+day: >-
+   {n, plural,
+       =1    {día}
+       other {días}
+   }
+week: >-
+   {n, plural,
+       =1    {semana}
+       other {semanas}
+   }
+month: >-
+   {n, plural,
+       =1    {mes}
+       other {meses}
+   }
+year: >-
+   {n, plural,
+       =1    {año}
+       other {años}
+   }
+
+# Días de la semana
+day_name: >-
+   {n, plural,
+      =1    {lunes}
+      =2    {martes}
+      =3    {miércoles}
+      =4    {jueves}
+      =5    {viernes}
+      =6    {sábado}
+      =7    {domingo}
+      other {día desconocido}
+   }
+
+# Meses del año
+month_name: >-
+   {n, plural,
+      =1    {enero}
+      =2    {febrero}
+      =3    {marzo}
+      =4    {abril}
+      =5    {mayo}
+      =6    {junio}
+      =7    {julio}
+      =8    {agosto}
+      =9    {septiembre}
+      =10   {octubre}
+      =11   {noviembre}
+      =12   {diciembre}
+      other {mes desconocido}
+   }
+
+# Frases comunes relacionadas con fechas
+just_now: "justo ahora" # menos de 20 segundos
+a_few_seconds: "hace unos segundos" # menos de un minuto
+before: "hace {before_number} {before_unit}"
+time_notation: "{n} {unit}"
+date_today: "hoy"
+date_tomorrow: "mañana"
+date_yesterday: "ayer"
+
+# Usable con $translator->trans('published_at', ['at' => new \DateTime('2019-01-25 11:30:00')]);
+published_at: 'Publicado el {at, date} - {at, time, short}'

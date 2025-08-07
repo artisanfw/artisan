@@ -1,0 +1,71 @@
+{
+  "name": "artisanfw/artisan",
+  "description": "A lightweight framework to quickly start small projects.",
+  "type": "project",
+  "authors": [
+    {
+      "name": "Airam",
+      "email": "airamb@gmail.com"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/artisanfw/api.git"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/artisanfw/doctrine.git"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/artisanfw/mailer.git"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/artisanfw/jwt.git"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/artisanfw/logger.git"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/artisanfw/twig.git"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/artisanfw/i18n.git"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/artisanfw/token-manager.git"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/artisanfw/where.git"
+    }
+  ],
+  "require": {
+    "php": ">=8.3",
+    "artisanfw/mailer": "^1.0",
+    "artisanfw/jwt": "1.0",
+    "artisanfw/logger": "^1.0",
+    "artisanfw/twig": "^1.0",
+    "artisanfw/doctrine": "1.0",
+    "artisanfw/token-manager": "1.0",
+    "artisanfw/i18n": "^1.0",
+    "artisanfw/where": "1.0",
+    "artisanfw/api": "1.0"
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "autoload": {
+    "psr-4": {
+      "Api\\": "src/"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^12.2"
+  }
+}

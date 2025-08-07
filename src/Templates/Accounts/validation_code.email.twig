@@ -1,0 +1,23 @@
+<div style="background: rgb(20, 20, 45); color: rgb(255, 255, 255); text-align: center; font-family: sans-serif;">
+    <div>
+        <div style="width: 100%; padding: 20px 0px;">{{ webname }}</div>
+        <div style="margin: 0px 48px; height: 1px; background: rgb(59, 66, 84);">&nbsp;</div>
+        <div style="width: auto; max-width: 350px; margin: 0px auto; padding: 80px 20px; box-sizing: border-box;">
+            <h3 style="font-weight: 900; font-size: 24px; line-height: 36px; margin: 0px 0px 12px; text-align: center; color: rgb(255, 255, 255);">
+                {% if is_new_account %}
+                {{ t('welcome_to', {'user': username}) }}
+                {% else %}
+                {{ t('hello_again', {'user': username}) }}
+                {% endif %}
+            </h3>
+            <p style="width: 100%; font-size: 14px; line-height: 21px; margin: 0px;">
+                <small style="font-size: 14px; color: rgba(255, 255, 255, 0.5);"> {{ t('your_verification_code') }}</small>
+            </p>
+            <h1 style="font-weight: bold; font-size: 66px; line-height: 120px; margin: 56px 0px 80px; text-align: center;">{{ code }}</h1>
+            <p style="width: 100%; font-size: 14px; line-height: 21px; margin: 0px 0px 30px; color: rgb(255, 255, 255);">{{ t('verification_code_explanation', {'webname': webname}) }}</p>
+            <p style="width: 100%; font-size: 14px; line-height: 21px; margin: 0px 0px 60px; color: rgb(255, 255, 255);">{{ t('code_expiration', {'exp_time': expiration_time}) }}</p>
+        </div>
+        
+        {% include 'footer.email.twig' %}
+    </div>
+</div>
