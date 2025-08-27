@@ -61,7 +61,7 @@ class AccountsController
         $em->persist($user);
         $em->flush();
 
-        $this->responseWithToken();
+        $this->responseWithToken($user);
         (new CodeStrategy())->sendToEmail($user, self::TOKEN_TYPE_EMAIL_VALIDATION, true);
     }
 
@@ -78,7 +78,8 @@ class AccountsController
         };
 
         $strategy->authenticate();
-        $this->responseWithToken();
+        $user = ServiceContainer::i()->getUser();
+        $this->responseWithToken($user);
     }
 
     /**
@@ -276,14 +277,17 @@ class AccountsController
         }
     }
 
-    private function responseWithToken(array $additionalPayload = []): void
+    private function responseWithToken(User $user, array $additionalPayload = []): void
     {
         if (!isset($additionalPayload['success'])) {
             $additionalPayload['success'] = true;
         }
 
-        $user = ServiceContainer::i()->getUser();
         $additionalPayload['token'] = JWTStrategy::generateToken($user->getId());
+        $additionalPayload['user'] = [
+            'name' => $user->getName(),
+            'is_verified' => $user->isVerified(),
+        ];
 
         $response = ApiService::i()->getResponse();
         $response->setPayload($additionalPayload);
