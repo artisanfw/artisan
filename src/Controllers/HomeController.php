@@ -4,7 +4,6 @@ namespace Api\Controllers;
 use Api\Services\ServiceContainer;
 use Artisan\Routing\Services\ApiService;
 use Artisan\Services\Where;
-use GeoIp2\Database\Reader;
 use Api\Services\Who;
 use Artisan\Services\Language;
 use Symfony\Component\HttpFoundation\Request;

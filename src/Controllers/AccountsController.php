@@ -106,9 +106,14 @@ class AccountsController
 
         $this->updateRegionalData($user);
 
+        $em = Doctrine::i()->getEntityManager();
+        $em->flush();
+
         $response->setPayload([
             'success' => true,
-            'remaining_uses' => $token->getRemainingUses()
+            'user' => $user->showMin(),
+            'remaining_uses' => $token->getRemainingUses(),
+
         ]);
         $response->setCode(Response::HTTP_OK);
         $response->send();
@@ -272,8 +277,6 @@ class AccountsController
         if ($location) {
             $user->setCountryCode($location->getISO());
             $user->setTimezone($location->getTimezone());
-            $em = Doctrine::i()->getEntityManager();
-            $em->flush();
         }
     }
 
@@ -284,10 +287,7 @@ class AccountsController
         }
 
         $additionalPayload['token'] = JWTStrategy::generateToken($user->getId());
-        $additionalPayload['user'] = [
-            'name' => $user->getName(),
-            'is_verified' => $user->isVerified(),
-        ];
+        $additionalPayload['user'] = $user->showMin();
 
         $response = ApiService::i()->getResponse();
         $response->setPayload($additionalPayload);

@@ -149,6 +149,12 @@ class User
         ];
     }
 
+    public function showMin(): array
+    {
+        return ['name' => $this->name, 'is_verified' => $this->verified];
+
+    }
+
     public static function findOne(array $filter): ?User
     {
         $em = Doctrine::i()->getEntityManager();
