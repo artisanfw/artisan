@@ -60,6 +60,7 @@ class RouterList implements IRouter
 
         $routes->add('my_account', new Route('/my-account', [
             '_authRequired' => true,
+            '_validationRequired' => false,
             '_methods' => [self::GET, self::PATCH],
             '_controller' => [AccountsController::class, 'settings'],
         ]));
